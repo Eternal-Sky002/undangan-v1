@@ -151,7 +151,11 @@ function App() {
             <div className="entrance-art" aria-hidden="true">
               <span className="entrance-orbit entrance-orbit-one" />
               <span className="entrance-orbit entrance-orbit-two" />
-              <span className="entrance-heart">♥</span>
+              <img
+                className="entrance-anime"
+                src="https://images.unsplash.com/photo-1781842705399-eba4840edc19?q=80&w=685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                alt=""
+              />
               <span className="entrance-spark entrance-spark-one">✦</span>
               <span className="entrance-spark entrance-spark-two">✳</span>
             </div>
