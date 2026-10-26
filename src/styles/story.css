@@ -1,0 +1,25 @@
+.intro, .details { position: relative; overflow: hidden; }
+
+.intro-gamepad { top: 16%; right: 6%; width: 39px; color: var(--muted-blue); opacity: .18; }
+
+.intro { background: var(--paper); }
+
+.intro-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 12%; padding-top: 56px; }
+
+.intro h2, .details h2, .gallery h2, .rsvp h2 { margin: 0; font-size: clamp(44px, 5.3vw, 70px); line-height: 1.05; letter-spacing: -.06em; font-weight: 500; }
+
+.intro h2 em, .details h2 em, .gallery h2 em { color: var(--muted-blue); }
+
+.intro-copy { padding-top: 8px; max-width: 430px; }
+
+.intro-heart { width: 22px; color: #435585; margin-bottom: 18px; }
+
+.intro-copy > p:not(.signature) { color: #555c70; font-size: 14px; line-height: 1.9; margin: 0; }
+
+.intro-stats { margin-top: 35px; padding-top: 17px; border-top: 1px solid #d9d5cf; display: flex; gap: 48px; }
+
+.intro-stats div { display: flex; flex-direction: column; gap: 6px; }
+
+.intro-stats strong { font: 500 23px var(--serif); }
+
+.intro-stats span { font: 8px var(--mono); letter-spacing: .1em; color: var(--muted-blue); }

@@ -1,0 +1,55 @@
+.rsvp .section-next { color: var(--cream); }
+
+.rsvp .section-next:hover { color: white; }
+
+.rsvp { position: relative; overflow: hidden; color: var(--paper); background: var(--navy); }
+
+.rsvp > *:not(.rsvp-decoration) { position: relative; z-index: 1; }
+
+.rsvp .section-index { color: #b8bfd1; }
+
+.rsvp .section-index span { color: var(--cream); }
+
+.rsvp-content { display: grid; grid-template-columns: 1fr .8fr; gap: 13%; padding: 54px 5% 32px; align-items: center; }
+
+.rsvp h2 { font-size: clamp(55px, 7vw, 83px); }
+
+.rsvp h2 em { color: var(--cream); }
+
+.rsvp-copy > p:last-child { max-width: 340px; margin: 23px 0 0; color: #c4c9d8; font-size: 13px; line-height: 1.8; }
+
+.rsvp-form { display: flex; flex-direction: column; }
+
+.rsvp-form label { margin: 0 0 8px; color: #c4c9d8; font-size: 8px; }
+
+.rsvp-form input, .rsvp-form select, .rsvp-form textarea { width: 100%; margin-bottom: 21px; padding: 0 12px; outline: none; border: 1px solid rgba(244, 238, 229, .35); border-radius: 0; color: var(--paper); background: rgba(244, 238, 229, .06); font-size: 12px; }
+
+.rsvp-form input, .rsvp-form select { height: 44px; }
+
+.rsvp-form textarea { min-height: 96px; padding-top: 12px; padding-bottom: 12px; line-height: 1.6; resize: vertical; }
+
+.rsvp-form textarea::placeholder { color: #a9b1ca; }
+
+.rsvp-form textarea:focus { border-color: var(--cream); box-shadow: 0 0 0 2px rgba(245, 232, 199, .16); }
+
+.rsvp-form input::placeholder { color: #a9b1ca; }
+
+.rsvp-form select { color-scheme: dark; }
+
+.rsvp-form option { color: var(--navy); background: var(--paper); }
+
+.rsvp-form input:focus, .rsvp-form select:focus { border-color: var(--cream); box-shadow: 0 0 0 2px rgba(245, 232, 199, .16); }
+
+.rsvp-form .button { align-self: flex-start; margin-top: 1px; }
+
+.rsvp-message { min-height: 19px; margin: 13px 0 0; color: var(--cream); font-size: 12px; line-height: 1.6; }
+
+.rsvp-decoration { position: absolute; display: flex; align-items: center; gap: 15px; right: 9%; top: 80px; color: rgba(245, 232, 199, .13); }
+
+.rsvp-decoration svg { width: 26px; }
+
+.rsvp-decoration span { font-size: 21px; }
+
+.rsvp-bottom { display: flex; justify-content: space-between; border-top: 1px solid rgba(244, 238, 229, .2); padding-top: 16px; color: #a9b1ca; font-size: 7px; }
+
+.rsvp .section-next { margin-top: 19px; }

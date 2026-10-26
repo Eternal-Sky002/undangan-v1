@@ -1,0 +1,20 @@
+.site-header {
+  height: 78px;
+  padding: 0 7.3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--paper);
+  position: relative;
+  z-index: 5;
+}
+
+.brand { display: inline-flex; gap: 10px; align-items: center; font: 700 18px var(--mono); letter-spacing: -.08em; }
+
+.brand svg { width: 17px; color: var(--muted-blue); }
+
+.brand-amp { color: var(--muted-blue); }
+
+.nav-cta { border-bottom: 1px solid var(--navy); padding: 8px 0; font: 500 10px var(--mono); letter-spacing: .09em; }
+
+.nav-cta span { margin-left: 8px; }

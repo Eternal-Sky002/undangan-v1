@@ -1,0 +1,117 @@
+@media (min-width: 1500px) {
+  .hero { padding-left: max(7.3%, calc((100% - 1280px) / 2)); padding-right: max(7.3%, calc((100% - 1280px) / 2)); }
+}
+
+@media (max-width: 800px) {
+  .site-header { height: 68px; padding: 0 5%; }
+  .main-nav { gap: 18px; font-size: 11px; }
+  .hero { min-height: 600px; height: auto; padding: 72px 6% 70px; grid-template-columns: 1fr .85fr; }
+  .hero h1 { font-size: clamp(57px, 9vw, 78px); }
+  .hero-art { height: 390px; }
+  .hero-photo { width: 78%; height: 84%; right: 9%; }
+  .hero-photo .pixel-card { width: 183px; right: -10px; bottom: 27px; padding: 12px; }
+  .hero-copy-photo { position: relative; top: auto; left: auto; right: auto; bottom: auto; z-index: 0; float: right; width: 108px; height: 153px; margin: 2px 0 14px 25px; transform: rotate(5deg); }
+  .hero-date { clear: both; }
+  .hero-photo-secondary { width: 35%; height: 37%; left: -1%; bottom: 12%; }
+  .hero-side-note { right: -3%; }
+  .section-pad { padding: 80px 7%; }
+  .intro-grid { gap: 7%; }
+  .details-heading { margin-top: 42px; }
+  .event-card { padding: 22px; }
+  .gallery { padding-left: 5%; padding-right: 5%; }
+  .gallery-grid { height: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gallery-photo-tall, .gallery-photo-wide, .gallery-photo-small, .gallery-photo-fourth { height: 250px; }
+  .gallery-photo-wide, .gallery-photo-fourth { height: 220px; }
+  .gift-content { gap: 7%; }
+}
+
+@media (max-width: 600px) {
+  html { scroll-padding-top: 65px; }
+  .site-header { height: 65px; padding: 0 20px; }
+  .brand { font-size: 16px; }
+  .main-nav { gap: 12px; }
+  .main-nav a { font-size: 10px; }
+  .main-nav a:first-child { display: none; }
+  .nav-cta { font-size: 8px; }
+  .hero { min-height: auto; display: flex; flex-direction: column; padding: 60px 23px 72px; }
+  .hero-copy { align-self: stretch; padding-bottom: 0; }
+  .hero h1 { font-size: clamp(65px, 16vw, 91px); }
+  .hero-description { max-width: 290px; margin: 20px 0; font-size: 13px; }
+  .hero-date { clear: both; font-size: 7px; margin-top: 18px; }
+  .hero-art { width: min(100%, 390px); height: 390px; align-self: center; margin-top: 32px; }
+  .hero-photo { width: 78%; height: 84%; right: 10%; }
+  .hero-photo-secondary { width: 35%; height: 37%; left: -1%; bottom: 12%; }
+  .hero-photo .pixel-card { width: 163px; right: -8px; bottom: 27px; padding: 10px; font-size: 7px; }
+  .hero-side-note { right: -2%; top: 42%; }
+  .spark-one { left: 0; }
+  .scroll-cue { left: 23px; bottom: 25px; }
+  .section-pad { padding: 69px 23px; }
+  .intro-grid { grid-template-columns: 1fr; gap: 29px; padding-top: 38px; }
+  .intro h2, .details h2 { font-size: 53px; }
+  .intro-copy { max-width: none; }
+  .intro-stats { margin-top: 26px; }
+  .event-countdown { margin-top: 26px; padding: 29px 20px 18px; }
+  .countdown-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .countdown { width: 100%; justify-content: space-between; gap: 7px; }
+  .countdown-unit { min-width: 0; }
+  .countdown-number { font-size: 37px; }
+  .countdown-bottom { margin-top: 29px; gap: 9px; font-size: 6px; }
+  .details-heading { display: block; margin: 39px 0 27px; }
+  .details-intro { margin: 18px 0 0; }
+  .event-grid { grid-template-columns: 1fr; gap: 13px; }
+  .event-card { min-height: 322px; }
+  .dress-code { flex-wrap: wrap; line-height: 1.8; gap: 7px; }
+  .gallery { padding: 68px 20px 59px; }
+  .gallery-heading .eyebrow { margin-top: 34px; }
+  .gallery-grid { height: auto; grid-template-columns: 1fr 1fr; gap: 11px; margin-top: 31px; }
+  .gallery-photo { padding: 6px; }
+  .gallery-photo-tall { height: 230px; }
+  .gallery-photo-wide { height: 183px; }
+  .gallery-photo-small { height: 183px; }
+  .gallery-photo-fourth { height: 183px; }
+  .gallery-photo figcaption { font-size: 6px; line-height: 1.5; }
+  .gallery-note { line-height: 1.7; font-size: 6px; margin-top: 28px; }
+  .rsvp-content { grid-template-columns: 1fr; gap: 29px; padding: 40px 0 24px; }
+  .gift-content { grid-template-columns: 1fr; gap: 14px; padding: 38px 0 8px; }
+  .rsvp h2 { font-size: 68px; }
+  .rsvp-decoration { top: 54px; right: 8%; }
+  .rsvp-bottom { gap: 10px; font-size: 6px; }
+  .site-footer { min-height: 75px; padding: 0 20px; }
+  .site-footer > p { text-align: center; max-width: 145px; line-height: 1.6; font-size: 6px; }
+  .back-top { font-size: 6px; }
+  .entrance-frame { padding: 29px 20px 25px; }
+  .entrance-art { width: 188px; height: 188px; margin: 21px auto 16px; }
+  .entrance-anime { width: 126px; height: 155px; }
+  .entrance-corner { font-size: 6px; }
+  .entrance-corner-top { top: 11px; left: 12px; }
+  .entrance-corner-bottom { right: 12px; bottom: 11px; }
+  .floating-nav { bottom: calc(9px + env(safe-area-inset-bottom)); width: calc(100% - 24px); padding: 5px; }
+  .floating-nav-link { min-height: 44px; }
+  .floating-nav-icon { font-size: 14px; }
+  .floating-nav-label { font-size: 6px; }
+}
+
+@media (max-width: 370px) {
+  .main-nav { gap: 8px; }
+  .main-nav a { font-size: 9px; }
+  .nav-cta { font-size: 7px; }
+  .nav-cta span { margin-left: 3px; }
+  .hero h1 { font-size: 62px; }
+  .hero-date { letter-spacing: .04em; }
+  .countdown-number { font-size: 32px; }
+  .site-footer { padding: 0 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  .invitation-reveal { animation-duration: .01ms !important; }
+  .game-entrance.is-entering, .game-entrance.is-entering::after,
+  .game-entrance.is-entering .entrance-frame, .game-entrance.is-entering .entrance-art,
+  .game-entrance.is-entering .entrance-orbit-one, .game-entrance.is-entering .entrance-orbit-two,
+  .game-entrance.is-entering .entrance-button, .game-entrance.is-entering .link-hud,
+  .game-entrance.is-entering .link-hud-ring, .game-entrance.is-entering .link-hud-scanline,
+  .game-entrance.is-entering .link-hud-message, .game-entrance.is-entering .link-hud-submessage,
+  .game-entrance.is-entering .link-hud-progress, .game-entrance.is-entering .link-hud-progress i {
+    animation-duration: .01ms !important;
+  }
+}

@@ -1,0 +1,55 @@
+.main-nav { display: flex; gap: 36px; color: #435585; font-size: 12px; }
+
+.main-nav a, .back-top { transition: color .2s ease; }
+
+.main-nav a:hover, .back-top:hover { color: var(--navy); }
+
+.eyebrow, .section-index, .hero-date, .photo-caption, .pixel-card, .scroll-cue, .hero-side-note, .countdown-label, .countdown-bottom, .event-number, .event-time, .text-link, .dress-code, .gallery-photo figcaption, .gallery-note, .rsvp-form label, .rsvp-bottom, .site-footer > p, .back-top {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .11em;
+}
+
+.eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: var(--cream); }
+
+.eyebrow-line { width: 22px; height: 1px; background: var(--cream); display: inline-block; }
+
+h1 em, h2 em { font-family: var(--serif); font-weight: 500; }
+
+.period { color: var(--cream); }
+
+.button { display: inline-flex; align-items: center; justify-content: space-between; gap: 25px; border: 0; cursor: pointer; font: 500 9px var(--mono); letter-spacing: .08em; transition: transform .2s, background .2s; }
+
+.button:hover { transform: translateY(-2px); }
+
+.button-light { background: var(--cream); color: var(--navy); padding: 16px 19px; border-radius: 999px; }
+
+.button-light:hover { background: white; }
+
+.status-dot { width: 6px; height: 6px; display: inline-block; border-radius: 50%; background: var(--cream); margin-right: 9px; }
+
+.date-divider { color: var(--muted-blue); margin: 0 8px; }
+
+.gamepad-sprinkle { position: absolute; z-index: 2; width: 32px; color: var(--mint); opacity: .72; filter: drop-shadow(0 0 9px rgba(169, 232, 231, .3)); pointer-events: none; }
+
+.section-next { width: max-content; display: flex; align-items: center; gap: 12px; margin: 34px 0 0 auto; color: var(--muted-blue); font: 500 8px var(--mono); letter-spacing: .1em; transition: color .2s, transform .2s; }
+
+.section-next span { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid currentColor; font-size: 13px; }
+
+.section-next:hover { color: var(--navy); transform: translateY(2px); }
+
+.section-next:focus-visible, .scroll-cue:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+
+.section-pad { padding: 105px 10.2%; }
+
+.section-index { color: var(--muted-blue); display: flex; gap: 12px; align-items: center; }
+
+.section-index span { color: var(--navy); }
+
+.eyebrow-dark { color: var(--muted-blue); }
+
+.signature { margin: 23px 0 0; color: var(--muted-blue); font-family: var(--serif); font-style: italic; font-size: 15px; }
+
+.signature strong { color: var(--navy); font-weight: 600; padding-left: 4px; }
+
+.field-optional { margin-left: 6px; color: #a9b1ca; font-size: 7px; }
