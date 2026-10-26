@@ -9,12 +9,24 @@ const SECTION_LINKS = [
   { id: 'details', label: 'WAKTU & ACARA', icon: '◷' },
   { id: 'gallery', label: 'FOTO', icon: '▧' },
   { id: 'rsvp', label: 'RSVP', icon: '↗' },
+  { id: 'gift', label: 'GIFT', icon: '✦' },
 ];
 
 function PixelHeart({ className = '' }) {
   return (
     <svg aria-hidden="true" className={className} viewBox="0 0 16 14" fill="currentColor">
-      <path d="M3 0h3v2h4V0h3v2h3v5h-2v2h-2v2H9v2H7v-2H5V9H3V7H1V2h2z" />
+      <path d="M8 13.2 2.1 7.5A3.7 3.7 0 0 1 7.3 2.2L8 3l.7-.8a3.7 3.7 0 0 1 5.2 5.3L8 13.2Z" />
+    </svg>
+  );
+}
+
+function GamepadIcon({ className = '' }) {
+  return (
+    <svg aria-hidden="true" className={className} viewBox="0 0 48 32" fill="none">
+      <path d="M14.2 5.5h19.6a8.5 8.5 0 0 1 8.3 6.8l2 9.2a5.6 5.6 0 0 1-9.3 5.2l-5.1-4.6H18.3l-5.1 4.6a5.6 5.6 0 0 1-9.3-5.2l2-9.2a8.5 8.5 0 0 1 8.3-6.8Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d="M14 12v8m-4-4h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="33" cy="14" r="1.5" fill="currentColor" />
+      <circle cx="37" cy="18" r="1.5" fill="currentColor" />
     </svg>
   );
 }
@@ -120,10 +132,14 @@ function App() {
 
     const attendance = form.get('attendance');
     const guestMessage = form.get('guestMessage')?.toString().trim();
+    if (!guestMessage) {
+      setRsvpMessage('Silakan isi ucapan atau doa terlebih dahulu.');
+      return;
+    }
     setRsvpMessage(
       attendance === 'yes'
-        ? `Terima kasih, ${guestName}! ${guestMessage ? 'RSVP dan ucapanmu sudah kami terima.' : 'Kehadiranmu sudah kami catat.'} Sampai bertemu di hari bahagia kami!`
-        : `Terima kasih sudah memberi kabar, ${guestName}.${guestMessage ? ' Ucapanmu sangat berarti untuk kami.' : ' Doa baikmu sangat berarti untuk kami.'}`,
+        ? `Terima kasih, ${guestName}! RSVP dan ucapanmu sudah kami terima. Sampai bertemu di hari bahagia kami!`
+        : `Terima kasih sudah memberi kabar, ${guestName}. Ucapanmu sangat berarti untuk kami.`,
     );
     event.currentTarget.reset();
   }
@@ -147,13 +163,13 @@ function App() {
             <span className="link-hud-progress"><i /></span>
           </div>
           <div className="entrance-frame">
-            <p className="entrance-kicker"><PixelHeart /> A LOVE STORY IN PIXELS</p>
+            <p className="entrance-kicker"><PixelHeart /> A LOVE STORY, NEXT LEVEL</p>
             <div className="entrance-art" aria-hidden="true">
               <span className="entrance-orbit entrance-orbit-one" />
               <span className="entrance-orbit entrance-orbit-two" />
               <img
                 className="entrance-anime"
-                src="https://images.unsplash.com/photo-1781842705399-eba4840edc19?q=80&w=685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                src="https://plus.unsplash.com/premium_photo-1761929642510-be8d4bb29b06?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
                 alt=""
               />
               <span className="entrance-spark entrance-spark-one">✦</span>
@@ -165,9 +181,9 @@ function App() {
             <button className="entrance-button" type="button" disabled={isEntering} onClick={() => setIsEntering(true)}>
               <span aria-hidden="true">▶</span> {isEntering ? 'MEMASUKI PERMAINAN...' : 'MASUK KE PERMAINAN'} <span aria-hidden="true">↗</span>
             </button>
-            <p className="entrance-hint">PRESS START <span>·</span> 24 OKTOBER 2026</p>
+            <p className="entrance-hint">YOUR STORY STARTS HERE <span>·</span> 24 OKTOBER 2026</p>
           </div>
-          <span className="entrance-corner entrance-corner-top">INSERT COIN · 01</span>
+          <span className="entrance-corner entrance-corner-top">SYSTEM ONLINE · 01</span>
           <span className="entrance-corner entrance-corner-bottom">PLAYER 01 + PLAYER 02</span>
         </section>
       )}
@@ -205,6 +221,8 @@ function App() {
           <div className="hero-art">
             <div className="hero-spark spark-one" aria-hidden="true">✳</div>
             <div className="hero-spark spark-two" aria-hidden="true">✦</div>
+            <GamepadIcon className="gamepad-sprinkle hero-gamepad-one" />
+            <GamepadIcon className="gamepad-sprinkle hero-gamepad-two" />
             <figure className="hero-photo-secondary">
               <img
                 src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=700&q=85"
@@ -218,19 +236,20 @@ function App() {
                 alt="Pasangan pengantin merayakan hari istimewa mereka"
               />
               <div className="pixel-card" aria-label="Alya dan Bima, pemain satu dan dua">
-                <span className="pixel-card-label">PLAYER SELECT</span>
+                <span className="pixel-card-label">THE PERFECT TEAM</span>
                 <div className="player-row"><span className="player-icon">A</span><span>ALYA</span><span className="player-heart">♥♥♥</span></div>
                 <div className="player-row"><span className="player-icon player-icon-alt">B</span><span>BIMA</span><span className="player-heart">♥♥♥</span></div>
                 <span className="pixel-card-footer">CO-OP MODE: ON</span>
               </div>
               <div className="photo-caption"><span>FIG. 01</span><span>OUR PLAYER SELECT</span></div>
             </div>
-            <div className="hero-side-note">A LOVE STORY IN PIXELS &amp; REAL LIFE <span>✳</span></div>
+            <div className="hero-side-note">A LOVE STORY IN GAME &amp; REAL LIFE <span>✳</span></div>
           </div>
           <a className="scroll-cue" href="#story"><span /> NEXT: OUR STORY ↓</a>
         </section>
 
         <section className="intro section-pad" id="story">
+          <GamepadIcon className="gamepad-sprinkle intro-gamepad" />
           <div className="section-index"><span>01</span> PLAYER BACKSTORY</div>
           <div className="intro-grid">
             <div className="intro-title">
@@ -251,6 +270,7 @@ function App() {
         </section>
 
         <section className="details section-pad" id="details">
+          <GamepadIcon className="gamepad-sprinkle details-gamepad" />
           <div className="section-index"><span>02</span> EVENT SELECT</div>
           <div className="event-countdown">
             <div className="countdown-inner">
@@ -311,6 +331,10 @@ function App() {
               <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=900&q=85" alt="Momen bahagia menjelang pernikahan" loading="lazy" />
               <figcaption>LEVEL 03 — FOREVER PLAYER TWO</figcaption>
             </figure>
+            <figure className="gallery-photo pixel-frame gallery-photo-fourth">
+              <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=85" alt="Alya dan Bima menikmati waktu bersama" loading="lazy" />
+              <figcaption>LEVEL 04 — OUR NEXT CHAPTER</figcaption>
+            </figure>
           </div>
           <p className="gallery-note"><span>+</span> MOMEN-MOMEN KECIL, KENANGAN BESAR <span>+</span></p>
           <a className="section-next" href="#rsvp">NEXT: RSVP <span aria-hidden="true">↓</span></a>
@@ -329,17 +353,40 @@ function App() {
               <label htmlFor="guestName">NAMA KAMU</label>
               <input id="guestName" name="guestName" type="text" placeholder="Tulis nama lengkap" required />
               <label htmlFor="attendance">KONFIRMASI KEHADIRAN</label>
-              <select id="attendance" name="attendance" defaultValue="yes">
+              <select id="attendance" name="attendance" defaultValue="" required>
+                <option value="" disabled>Pilih konfirmasi kehadiran</option>
                 <option value="yes">Yes! Aku akan datang</option>
                 <option value="no">Maaf, aku belum bisa hadir</option>
               </select>
-              <label htmlFor="guestMessage">UCAPAN &amp; DOA <span className="field-optional">OPSIONAL</span></label>
-              <textarea id="guestMessage" name="guestMessage" rows="4" maxLength="300" placeholder="Tuliskan ucapan atau doa terbaikmu..." />
+              <label htmlFor="guestMessage">UCAPAN &amp; DOA</label>
+              <textarea id="guestMessage" name="guestMessage" rows="4" maxLength="300" placeholder="Tuliskan ucapan atau doa terbaikmu..." required />
               <button className="button button-light" type="submit">KIRIM KONFIRMASI <span aria-hidden="true">↗</span></button>
               <p className="rsvp-message" role="status" aria-live="polite">{rsvpMessage}</p>
             </form>
           </div>
           <div className="rsvp-bottom"><span>PRESS START TO RSVP</span><span>PLAYER 01 + PLAYER 02 + YOU</span></div>
+          <a className="section-next" href="#gift">WEDDING GIFT <span aria-hidden="true">↓</span></a>
+        </section>
+
+        <section className="wedding-gift section-pad" id="gift">
+          <div className="section-index"><span>05</span> WEDDING GIFT</div>
+          <div className="gift-content">
+            <div>
+              <p className="eyebrow eyebrow-dark">YOUR THOUGHTFUL GIFT</p>
+              <h2>Wedding<br /><em>gift.</em></h2>
+            </div>
+            <div>
+              <p className="gift-message">Doa restu Anda merupakan hadiah terindah bagi kami. Jika ingin berbagi tanda kasih, Anda dapat mengirimkannya melalui rekening berikut.</p>
+              <div className="gift-account">
+                <span className="gift-account-note">CONTOH — GANTI DENGAN DATA REKENING ASLI</span>
+                <dl>
+                  <div><dt>Bank</dt><dd>BANK CONTOH</dd></div>
+                  <div><dt>Nomor rekening</dt><dd>0000 0000 0000</dd></div>
+                  <div><dt>Atas nama</dt><dd>NAMA PEMILIK</dd></div>
+                </dl>
+              </div>
+            </div>
+          </div>
           <a className="section-next" href="#home">BACK TO START <span aria-hidden="true">↑</span></a>
         </section>
       </main>
