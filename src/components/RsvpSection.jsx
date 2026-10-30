@@ -35,7 +35,7 @@ export default function RsvpSection() {
         <div className="rsvp-copy">
           <p className="eyebrow"><span className="eyebrow-line" /> YOUR PLAYER SLOT IS WAITING</p>
           <h2>Will you<br /><em>join us?</em></h2>
-          <p>Kehadiranmu adalah hadiah paling berharga. Kabari kami sebelum 17 Oktober 2026, ya!</p>
+          <p>Kehadiranmu adalah hadiah paling berharga. Kabari kami sebelum 7 Januari 2027, ya!</p>
         </div>
         <form className="rsvp-form" onSubmit={handleRsvp}>
           <label htmlFor="guestName">NAMA KAMU</label>

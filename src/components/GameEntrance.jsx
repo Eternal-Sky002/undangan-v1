@@ -30,13 +30,13 @@ export default function GameEntrance({ isEntering, onEnter }) {
           <span className="entrance-spark entrance-spark-one">✦</span>
           <span className="entrance-spark entrance-spark-two">✳</span>
         </div>
-        <p className="entrance-overline">ALYA <span>+</span> BIMA</p>
+        <p className="entrance-overline">NOVI <span>+</span> RIO</p>
         <h1 id="entrance-title" className="entrance-title">The next level<br /><em>starts here.</em></h1>
         <p className="entrance-description">Sebuah kisah baru menanti untuk dimulai.<br />Kami senang jika kamu menjadi bagian di dalamnya.</p>
         <button className="entrance-button" type="button" disabled={isEntering} onClick={onEnter}>
           <span aria-hidden="true">▶</span> {isEntering ? 'MEMASUKI PERMAINAN...' : 'MASUK KE PERMAINAN'} <span aria-hidden="true">↗</span>
         </button>
-        <p className="entrance-hint">YOUR STORY STARTS HERE <span>·</span> 24 OKTOBER 2026</p>
+        <p className="entrance-hint">YOUR STORY STARTS HERE <span>·</span> 9 JANUARI 2027</p>
       </div>
       <span className="entrance-corner entrance-corner-top">SYSTEM ONLINE · 01</span>
       <span className="entrance-corner entrance-corner-bottom">PLAYER 01 + PLAYER 02</span>

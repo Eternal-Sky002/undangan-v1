@@ -13,9 +13,9 @@ export default function StorySection() {
         <div className="intro-copy">
           <PixelHeart className="intro-heart" />
           <p>Berawal dari obrolan sederhana yang terasa seperti menemukan level rahasia, perjalanan kami tumbuh menjadi hal paling indah. Kini, kami siap membuka babak baru—dan akan sangat berarti jika kamu ikut merayakannya.</p>
-          <p className="signature">Dengan cinta, <strong>Alya &amp; Bima</strong></p>
+          <p className="signature">Dengan cinta, <strong>Novi &amp; Rio</strong></p>
           <div className="intro-stats">
-            <div><strong>08.14</strong><span>FIRST HELLO</span></div>
+            <div><strong>2014.11.04</strong><span>FIRST HELLO</span></div>
             <div><strong>∞</strong><span>CONTINUES...</span></div>
           </div>
         </div>

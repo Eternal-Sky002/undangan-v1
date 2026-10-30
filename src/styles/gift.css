@@ -8,7 +8,9 @@
 
 .gift-message { max-width: 420px; color: #555c70; font-size: 14px; line-height: 1.9; }
 
-.gift-account { margin-top: 20px; padding: 21px 23px; border: 1px solid rgba(1, 7, 54, .12); border-radius: 16px; background: rgba(255, 255, 255, .56); }
+.gift-accounts { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+
+.gift-account { padding: 21px 23px; border: 1px solid rgba(1, 7, 54, .12); border-radius: 16px; background: rgba(255, 255, 255, .56); }
 
 .gift-account-note { color: var(--muted-blue); font: 8px var(--mono); letter-spacing: .1em; }
 

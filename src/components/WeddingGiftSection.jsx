@@ -1,3 +1,8 @@
+const bankAccounts = [
+  { bank: 'BCA', accountNumber: '1913510066', accountName: 'NOVIELIA ALFIANITA' },
+  { bank: 'Bank Mandiri', accountNumber: '9000038768876', accountName: 'NOVIELIA ALFIANITA' },
+];
+
 export default function WeddingGiftSection() {
   return (
     <section className="wedding-gift section-pad" id="gift">
@@ -9,14 +14,18 @@ export default function WeddingGiftSection() {
         </div>
         <div>
           <p className="gift-message">Doa restu Anda merupakan hadiah terindah bagi kami. Jika ingin berbagi tanda kasih, Anda dapat mengirimkannya melalui rekening berikut.</p>
-          <div className="gift-account">
-            <span className="gift-account-note">CONTOH — GANTI DENGAN DATA REKENING ASLI</span>
-            <dl>
-              <div><dt>Bank</dt><dd>BANK CONTOH</dd></div>
-              <div><dt>Nomor rekening</dt><dd>0000 0000 0000</dd></div>
-              <div><dt>Atas nama</dt><dd>NAMA PEMILIK</dd></div>
-            </dl>
-          </div>
+        </div>
+        <div className="gift-accounts">
+          {bankAccounts.map(({ bank, accountNumber, accountName }, index) => (
+            <div className="gift-account" key={bank}>
+              <span className="gift-account-note">REKENING 0{index + 1}</span>
+              <dl>
+                <div><dt>Bank</dt><dd>{bank}</dd></div>
+                <div><dt>Nomor rekening</dt><dd>{accountNumber}</dd></div>
+                <div><dt>Atas nama</dt><dd>{accountName}</dd></div>
+              </dl>
+            </div>
+          ))}
         </div>
       </div>
       <a className="section-next" href="#home">BACK TO START <span aria-hidden="true">↑</span></a>

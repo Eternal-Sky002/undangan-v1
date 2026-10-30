@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { GamepadIcon } from './Icons.jsx';
 
-const WEDDING_DATE = new Date('2026-10-24T08:00:00+07:00');
+const WEDDING_DATE = new Date('2027-01-09T08:00:00+07:00');
 
 function Countdown() {
   const [remaining, setRemaining] = useState(() => getRemaining());
@@ -40,12 +40,12 @@ function EventCard({ number, quest, icon, title, time }) {
     <article className={`event-card${number === '02' ? ' event-card-alt' : ''}`}>
       <div className="event-number">{number} <span>{quest}</span></div>
       <div className="event-icon" aria-hidden="true">{icon}</div>
-      <p className="eyebrow eyebrow-dark">SABTU, 24 OKTOBER 2026</p>
+      <p className="eyebrow eyebrow-dark">SABTU, 9 JANUARI 2027</p>
       <h3>{title}</h3>
       <p className="event-time">{time}</p>
       <div className="event-rule" />
-      <p className="event-venue"><strong>Griya Svara</strong><br />Jl. Dago Pakar No. 18, Bandung</p>
-      <a className="text-link" href="https://maps.google.com/?q=Dago+Pakar+Bandung" target="_blank" rel="noreferrer">BUKA PETA <span aria-hidden="true">↗</span></a>
+      <p className="event-venue"><strong>Rayz UMM Hotel Malang</strong><br />Jl. Raya Sengkaling No.1, Jetis, Mulyoagung, Kec. Dau, Kabupaten Malang, Jawa Timur</p>
+      <a className="text-link" href="https://maps.app.goo.gl/yCWkRzRGcQicqvW76" target="_blank" rel="noreferrer">BUKA PETA <span aria-hidden="true">↗</span></a>
     </article>
   );
 }
@@ -63,7 +63,7 @@ export default function DetailsSection() {
           </div>
           <Countdown />
         </div>
-        <div className="countdown-bottom"><span>24—10—2026</span><span className="loading-track"><i /></span><span>LOADING HAPPINESS...</span></div>
+        <div className="countdown-bottom"><span>9—1—2027</span><span className="loading-track"><i /></span><span>LOADING HAPPINESS...</span></div>
       </div>
       <div className="details-heading">
         <div><p className="eyebrow eyebrow-dark">CHOOSE YOUR ADVENTURE</p><h2>Meet us<br /><em>at the altar.</em></h2></div>
@@ -73,7 +73,7 @@ export default function DetailsSection() {
         <EventCard number="01" quest="MAIN QUEST" icon="✳" title="Akad Nikah" time="08.00 — 10.00 WIB" />
         <EventCard number="02" quest="BONUS LEVEL" icon="✦" title="Resepsi" time="11.00 — 14.00 WIB" />
       </div>
-      <p className="dress-code"><span>✳</span> DRESS CODE <strong>EARTH TONES</strong> <span className="dress-divider">/</span> DATANG DENGAN SENYUM TERBAIKMU</p>
+      <p className="dress-code"><span>✳</span><strong>DATANG DENGAN SENYUM TERBAIKMU</strong></p>
       <a className="section-next" href="#gallery">NEXT: PHOTO GALLERY <span aria-hidden="true">↓</span></a>
     </section>
   );

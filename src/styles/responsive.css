@@ -73,6 +73,7 @@
   .gallery-note { line-height: 1.7; font-size: 6px; margin-top: 28px; }
   .rsvp-content { grid-template-columns: 1fr; gap: 29px; padding: 40px 0 24px; }
   .gift-content { grid-template-columns: 1fr; gap: 14px; padding: 38px 0 8px; }
+  .gift-accounts { grid-template-columns: 1fr; gap: 12px; }
   .rsvp h2 { font-size: 68px; }
   .rsvp-decoration { top: 54px; right: 8%; }
   .rsvp-bottom { gap: 10px; font-size: 6px; }

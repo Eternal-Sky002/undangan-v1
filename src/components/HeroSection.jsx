@@ -18,7 +18,7 @@ export default function HeroSection() {
           />
           <figcaption>PLAYER 01 + 02</figcaption>
         </figure>
-        <p className="hero-date"><span className="status-dot" /> 24 OKTOBER 2026 <span className="date-divider">/</span> BANDUNG, INDONESIA</p>
+        <p className="hero-date"><span className="status-dot" /> 9 JANUARI 2027 <span className="date-divider">/</span> MALANG, INDONESIA</p>
       </div>
 
       <div className="hero-art">
@@ -38,10 +38,10 @@ export default function HeroSection() {
             src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1100&q=85"
             alt="Pasangan pengantin merayakan hari istimewa mereka"
           />
-          <div className="pixel-card" aria-label="Alya dan Bima, pemain satu dan dua">
+          <div className="pixel-card" aria-label="Novi dan Rio, pemain satu dan dua">
             <span className="pixel-card-label">THE PERFECT TEAM</span>
-            <div className="player-row"><span className="player-icon">A</span><span>ALYA</span><span className="player-heart">♥♥♥</span></div>
-            <div className="player-row"><span className="player-icon player-icon-alt">B</span><span>BIMA</span><span className="player-heart">♥♥♥</span></div>
+            <div className="player-row"><span className="player-icon">N</span><span>NOVI</span><span className="player-heart">♥♥♥</span></div>
+            <div className="player-row"><span className="player-icon player-icon-alt">R</span><span>RIO</span><span className="player-heart">♥♥♥</span></div>
             <span className="pixel-card-footer">CO-OP MODE: ON</span>
           </div>
           <div className="photo-caption"><span>FIG. 01</span><span>OUR PLAYER SELECT</span></div>
