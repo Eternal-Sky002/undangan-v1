@@ -58,7 +58,6 @@ export default function DetailsSection() {
           <div className="event-number">01 <span>WEDDING DAY</span></div>
           <div className="event-icon" aria-hidden="true">✳</div>
           <p className="eyebrow eyebrow-dark">SABTU, 9 JANUARI 2027</p>
-          <h3>Akad &amp; Resepsi</h3>
           <div className="event-schedule">
             <div className="event-schedule-item">
               <strong>Akad Nikah</strong>

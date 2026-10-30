@@ -15,7 +15,7 @@ export default function StorySection() {
           />
           <p className="couple-role">MEMPELAI WANITA</p>
           <h3>Novielia Alfianita</h3>
-          <p className="couple-family">Putri dari Bapak Bambang dan Ibu Kusmiati</p>
+          <p className="couple-family">Putri dari Bapak Bambang dan Ibu Atik</p>
           <a className="couple-instagram" href="https://www.instagram.com/novielialfnt/" target="_blank" rel="noreferrer">
             @novielialfnt <span aria-hidden="true">↗</span>
           </a>

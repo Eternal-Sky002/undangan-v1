@@ -19,7 +19,7 @@ const SECTION_LINKS = [
   { id: 'details', label: 'WAKTU & ACARA', icon: '◷' },
   { id: 'gallery', label: 'FOTO', icon: '▧' },
   { id: 'rsvp', label: 'RSVP', icon: '↗' },
-  { id: 'gift', label: 'GIFT', icon: '✦' },
+  { id: 'gift', label: 'GIFT', icon: '✉' },
 ];
 
 function App() {
