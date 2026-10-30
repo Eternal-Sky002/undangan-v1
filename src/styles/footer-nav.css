@@ -52,4 +52,6 @@
 
 .floating-nav-icon { font-size: 15px; line-height: 1; }
 
+.floating-nav-icon.floating-nav-icon-details { font-size: 19px; }
+
 .floating-nav-label { font: 7px var(--mono); letter-spacing: .09em; }

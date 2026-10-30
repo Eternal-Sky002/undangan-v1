@@ -4,6 +4,26 @@
 
 .intro { background: var(--paper); }
 
+.couple-intro { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px; margin-top: 40px; padding: 25px 0; border-top: 1px solid #d9d5cf; border-bottom: 1px solid #d9d5cf; }
+
+.couple-profile { text-align: center; }
+
+.couple-photo { width: 132px; height: 184px; margin: 0 auto 18px; padding: 6px; object-fit: cover; background: #fff; border: 1px solid rgba(1, 7, 54, .1); border-radius: 14px; box-shadow: 0 10px 24px rgba(1, 7, 54, .1); }
+
+.couple-role { margin: 0 0 8px; color: var(--muted-blue); font: 8px var(--mono); letter-spacing: .12em; }
+
+.couple-profile h3 { margin: 0; font: 500 clamp(22px, 2.4vw, 30px) var(--serif); }
+
+.couple-profile h3 span { color: var(--navy); }
+
+.couple-family { margin: 7px 0 0; color: #5c6070; font-size: 11px; line-height: 1.7; }
+
+.couple-instagram { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; color: var(--muted-blue); font: 9px var(--mono); }
+
+.couple-instagram:hover { color: var(--navy); }
+
+.couple-ampersand { color: var(--muted-blue); font: italic 28px var(--serif); }
+
 .intro-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 12%; padding-top: 56px; }
 
 .intro h2, .details h2, .gallery h2, .rsvp h2 { margin: 0; font-size: clamp(44px, 5.3vw, 70px); line-height: 1.05; letter-spacing: -.06em; font-weight: 500; }

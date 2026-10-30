@@ -35,21 +35,6 @@ function Countdown() {
   );
 }
 
-function EventCard({ number, quest, icon, title, time }) {
-  return (
-    <article className={`event-card${number === '02' ? ' event-card-alt' : ''}`}>
-      <div className="event-number">{number} <span>{quest}</span></div>
-      <div className="event-icon" aria-hidden="true">{icon}</div>
-      <p className="eyebrow eyebrow-dark">SABTU, 9 JANUARI 2027</p>
-      <h3>{title}</h3>
-      <p className="event-time">{time}</p>
-      <div className="event-rule" />
-      <p className="event-venue"><strong>Rayz UMM Hotel Malang</strong><br />Jl. Raya Sengkaling No.1, Jetis, Mulyoagung, Kec. Dau, Kabupaten Malang, Jawa Timur</p>
-      <a className="text-link" href="https://maps.app.goo.gl/yCWkRzRGcQicqvW76" target="_blank" rel="noreferrer">BUKA PETA <span aria-hidden="true">↗</span></a>
-    </article>
-  );
-}
-
 export default function DetailsSection() {
   return (
     <section className="details section-pad" id="details">
@@ -67,11 +52,27 @@ export default function DetailsSection() {
       </div>
       <div className="details-heading">
         <div><p className="eyebrow eyebrow-dark">CHOOSE YOUR ADVENTURE</p><h2>Meet us<br /><em>at the altar.</em></h2></div>
-        <p className="details-intro">Dua momen istimewa, satu hari yang tak terlupakan. Simpan tanggalnya, ya!</p>
       </div>
       <div className="event-grid">
-        <EventCard number="01" quest="MAIN QUEST" icon="✳" title="Akad Nikah" time="08.00 — 10.00 WIB" />
-        <EventCard number="02" quest="BONUS LEVEL" icon="✦" title="Resepsi" time="11.00 — 14.00 WIB" />
+        <article className="event-card">
+          <div className="event-number">01 <span>WEDDING DAY</span></div>
+          <div className="event-icon" aria-hidden="true">✳</div>
+          <p className="eyebrow eyebrow-dark">SABTU, 9 JANUARI 2027</p>
+          <h3>Akad &amp; Resepsi</h3>
+          <div className="event-schedule">
+            <div className="event-schedule-item">
+              <strong>Akad Nikah</strong>
+              <span>08.00 — 10.00 WIB</span>
+            </div>
+            <div className="event-schedule-item">
+              <strong>Resepsi</strong>
+              <span>11.00 — 14.00 WIB</span>
+            </div>
+          </div>
+          <div className="event-rule" />
+          <p className="event-venue"><strong>Rayz UMM Hotel Malang</strong><br />Jl. Raya Sengkaling No.1, Jetis, Mulyoagung, Kec. Dau, Kabupaten Malang, Jawa Timur</p>
+          <a className="text-link" href="https://maps.app.goo.gl/yCWkRzRGcQicqvW76" target="_blank" rel="noreferrer">BUKA PETA <span aria-hidden="true">↗</span></a>
+        </article>
       </div>
       <p className="dress-code"><span>✳</span><strong>DATANG DENGAN SENYUM TERBAIKMU</strong></p>
       <a className="section-next" href="#gallery">NEXT: PHOTO GALLERY <span aria-hidden="true">↓</span></a>

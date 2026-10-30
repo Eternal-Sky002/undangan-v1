@@ -6,6 +6,7 @@ import FloatingNav from './components/FloatingNav.jsx';
 import GameEntrance from './components/GameEntrance.jsx';
 import GallerySection from './components/GallerySection.jsx';
 import HeroSection from './components/HeroSection.jsx';
+import QuranOpening from './components/QuranOpening.jsx';
 import SiteFooter from './components/SiteFooter.jsx';
 import SiteHeader from './components/SiteHeader.jsx';
 import StorySection from './components/StorySection.jsx';
@@ -88,6 +89,7 @@ function App() {
           <SiteHeader />
           <main>
             <HeroSection />
+            <QuranOpening />
             <StorySection />
             <DetailsSection />
             <GallerySection />

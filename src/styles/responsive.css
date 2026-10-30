@@ -15,6 +15,7 @@
   .hero-photo-secondary { width: 35%; height: 37%; left: -1%; bottom: 12%; }
   .hero-side-note { right: -3%; }
   .section-pad { padding: 80px 7%; }
+  .couple-intro { gap: 20px; }
   .intro-grid { gap: 7%; }
   .details-heading { margin-top: 42px; }
   .event-card { padding: 22px; }
@@ -46,6 +47,13 @@
   .spark-one { left: 0; }
   .scroll-cue { left: 23px; bottom: 25px; }
   .section-pad { padding: 69px 23px; }
+  .quran-opening { padding: 34px 23px 32px; }
+  .quran-opening-label { font-size: 18px; }
+  .quran-opening-arabic { font-size: 24px; line-height: 1.8; }
+  .quran-opening-translation { font-size: 12px; }
+  .couple-intro { grid-template-columns: 1fr; gap: 18px; margin-top: 32px; padding: 22px 0; }
+  .couple-photo { width: 116px; height: 162px; margin-bottom: 15px; }
+  .couple-ampersand { line-height: 1; text-align: center; }
   .intro-grid { grid-template-columns: 1fr; gap: 29px; padding-top: 38px; }
   .intro h2, .details h2 { font-size: 53px; }
   .intro-copy { max-width: none; }
@@ -55,11 +63,12 @@
   .countdown { width: 100%; justify-content: space-between; gap: 7px; }
   .countdown-unit { min-width: 0; }
   .countdown-number { font-size: 37px; }
-  .countdown-bottom { margin-top: 29px; gap: 9px; font-size: 6px; }
+  .countdown-bottom { margin-top: 29px; gap: 9px; font-size: 8px; }
   .details-heading { display: block; margin: 39px 0 27px; }
   .details-intro { margin: 18px 0 0; }
   .event-grid { grid-template-columns: 1fr; gap: 13px; }
   .event-card { min-height: 322px; }
+  .event-schedule { gap: 12px; }
   .dress-code { flex-wrap: wrap; line-height: 1.8; gap: 7px; }
   .gallery { padding: 68px 20px 59px; }
   .gallery-heading .eyebrow { margin-top: 34px; }

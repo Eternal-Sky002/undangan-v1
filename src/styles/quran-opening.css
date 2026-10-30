@@ -1,0 +1,11 @@
+.quran-opening { padding: 42px 10.2% 38px; text-align: center; color: var(--navy); background: var(--paper); }
+
+.quran-opening-label { margin: 0 0 20px; color: var(--muted-blue); font: 20px var(--serif); }
+
+.quran-opening blockquote { max-width: 900px; margin: 0 auto; }
+
+.quran-opening-arabic { margin: 0 auto 18px; font-family: var(--serif); font-size: clamp(23px, 3vw, 34px); line-height: 1.9; }
+
+.quran-opening-translation { max-width: 780px; margin: 0 auto 14px; color: #555c70; font: 13px/1.9 var(--serif); }
+
+.quran-opening cite { color: var(--muted-blue); font: normal 9px var(--mono); letter-spacing: .1em; }
