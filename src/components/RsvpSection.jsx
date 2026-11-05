@@ -2,12 +2,20 @@ import { useCallback, useEffect, useState } from 'react';
 import { PixelHeart } from './Icons.jsx';
 import { createRsvp, listRsvps } from '../api.js';
 
+const RSVPS_PER_PAGE = 5;
+
 export default function RsvpSection() {
   const [rsvpMessage, setRsvpMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [rsvps, setRsvps] = useState([]);
+  const [currentRsvpPage, setCurrentRsvpPage] = useState(1);
   const [isLoadingRsvps, setIsLoadingRsvps] = useState(true);
   const [rsvpsError, setRsvpsError] = useState('');
+  const totalRsvpPages = Math.ceil(rsvps.length / RSVPS_PER_PAGE);
+  const visibleRsvps = rsvps.slice(
+    (currentRsvpPage - 1) * RSVPS_PER_PAGE,
+    currentRsvpPage * RSVPS_PER_PAGE,
+  );
 
   const loadRsvps = useCallback(async () => {
     setIsLoadingRsvps(true);
@@ -28,6 +36,10 @@ export default function RsvpSection() {
   useEffect(() => {
     loadRsvps();
   }, [loadRsvps]);
+
+  useEffect(() => {
+    setCurrentRsvpPage((page) => Math.min(page, totalRsvpPages || 1));
+  }, [totalRsvpPages]);
 
   async function handleRsvp(event) {
     event.preventDefault();
@@ -66,6 +78,7 @@ export default function RsvpSection() {
           : `Terima kasih sudah memberi kabar, ${guestName}. Ucapanmu sangat berarti untuk kami.`,
       );
       formElement.reset();
+      setCurrentRsvpPage(1);
       loadRsvps();
     } catch (error) {
       setRsvpMessage(
@@ -117,7 +130,7 @@ export default function RsvpSection() {
             onClick={loadRsvps}
             disabled={isLoadingRsvps}
           >
-            {isLoadingRsvps ? 'MEMUAT...' : 'SEGARKAN ↻'}
+            {isLoadingRsvps ? 'MEMUAT...' : 'MUAT ULANG ↻'}
           </button>
         </div>
         {isLoadingRsvps ? (
@@ -131,7 +144,7 @@ export default function RsvpSection() {
           <p className="rsvp-guestbook-status">Belum ada ucapan. Jadilah yang pertama mengirimkan doa!</p>
         ) : (
           <ul className="rsvp-guestbook-list">
-            {rsvps.map((rsvp) => (
+            {visibleRsvps.map((rsvp) => (
               <li className="rsvp-guestbook-entry" key={rsvp.id}>
                 <div className="rsvp-guestbook-entry-heading">
                   <strong>{rsvp.guest_name}</strong>
@@ -150,6 +163,29 @@ export default function RsvpSection() {
               </li>
             ))}
           </ul>
+        )}
+        {!isLoadingRsvps && !rsvpsError && totalRsvpPages > 1 && (
+          <nav className="rsvp-pagination" aria-label="Navigasi halaman ucapan">
+            <button
+              className="rsvp-refresh"
+              type="button"
+              onClick={() => setCurrentRsvpPage((page) => Math.max(1, page - 1))}
+              disabled={currentRsvpPage === 1}
+            >
+              ← SEBELUMNYA
+            </button>
+            <span aria-live="polite">
+              Halaman {currentRsvpPage} dari {totalRsvpPages}
+            </span>
+            <button
+              className="rsvp-refresh"
+              type="button"
+              onClick={() => setCurrentRsvpPage((page) => Math.min(totalRsvpPages, page + 1))}
+              disabled={currentRsvpPage === totalRsvpPages}
+            >
+              BERIKUTNYA →
+            </button>
+          </nav>
         )}
       </div>
       <div className="rsvp-bottom"><span>PRESS START TO RSVP</span><span>PLAYER 01 + PLAYER 02 + YOU</span></div>

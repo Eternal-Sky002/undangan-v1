@@ -64,6 +64,8 @@
 
 .rsvp-guestbook-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
 
+.rsvp-pagination { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 20px; color: #c4c9d8; font-size: 10px; }
+
 .rsvp-guestbook-entry { border: 1px solid rgba(244, 238, 229, .2); padding: 16px; background: rgba(244, 238, 229, .04); }
 
 .rsvp-guestbook-entry-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; color: var(--paper); font-size: 13px; }
