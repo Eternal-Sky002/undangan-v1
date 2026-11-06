@@ -1,6 +1,6 @@
 import { PixelHeart } from './Icons.jsx';
 
-export default function GameEntrance({ isEntering, onEnter }) {
+export default function GameEntrance({ recipientName, isEntering, onEnter }) {
   return (
     <section className={`game-entrance${isEntering ? ' is-entering' : ''}`} aria-labelledby="entrance-title">
       <div className="entrance-stars" aria-hidden="true" />
@@ -30,6 +30,7 @@ export default function GameEntrance({ isEntering, onEnter }) {
           <span className="entrance-spark entrance-spark-one">✦</span>
           <span className="entrance-spark entrance-spark-two">✳</span>
         </div>
+        <p className="entrance-recipient">UNTUK {recipientName}</p>
         <p className="entrance-overline">NOVI <span>+</span> RIO</p>
         <h1 id="entrance-title" className="entrance-title">The next level<br /><em>starts here.</em></h1>
         <p className="entrance-description">Sebuah kisah baru menanti untuk dimulai.<br />Kami senang jika kamu menjadi bagian di dalamnya.</p>

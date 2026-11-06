@@ -80,6 +80,8 @@
 
 .entrance-overline span { margin: 0 7px; color: var(--cream); }
 
+.entrance-recipient { margin: 0 0 8px; color: var(--cream); font: 14px var(--mono); letter-spacing: .12em; }
+
 .entrance-title { margin: 0; color: var(--paper); font-size: clamp(38px, 8vw, 59px); line-height: 1.04; letter-spacing: -.055em; font-weight: 600; }
 
 .entrance-title em { color: var(--cream); }
@@ -131,6 +133,24 @@
   border-radius: 18px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, .3);
 }
+
+.route-message {
+  display: grid;
+  min-height: 100svh;
+  place-content: center;
+  padding: 32px 20px;
+  color: var(--paper);
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(67, 85, 133, .55), transparent 44%),
+    var(--navy);
+}
+
+.route-message h1 { margin: 0; font-size: clamp(28px, 6vw, 42px); }
+
+.route-message p { color: #c4c9d8; }
+
+.route-message-code { margin: 0 0 12px; color: var(--cream) !important; font: 12px var(--mono); letter-spacing: .2em; }
 
 .link-hud {
   position: absolute;

@@ -36,6 +36,30 @@ export async function createRsvp(rsvp) {
   }
 }
 
+export async function getInvitation(slug) {
+  const response = await fetch(`${API_BASE_URL}/api/invitations/${encodeURIComponent(slug)}`);
+
+  if (response.status === 404) return null;
+
+  if (!response.ok) {
+    const responseText = await response.text();
+    throw new Error(getErrorMessage(responseText, response.status));
+  }
+
+  const invitation = await response.json();
+  if (
+    !invitation ||
+    typeof invitation.name !== 'string' ||
+    !invitation.name.trim() ||
+    typeof invitation.slug !== 'string' ||
+    invitation.slug !== slug
+  ) {
+    throw new Error('Format data undangan dari server tidak valid.');
+  }
+
+  return invitation;
+}
+
 export async function listRsvps() {
   const response = await fetch(`${API_BASE_URL}/api/rsvps`);
 

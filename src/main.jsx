@@ -12,6 +12,7 @@ import SiteHeader from './components/SiteHeader.jsx';
 import StorySection from './components/StorySection.jsx';
 import WeddingGiftSection from './components/WeddingGiftSection.jsx';
 import RsvpSection from './components/RsvpSection.jsx';
+import { getInvitation } from './api.js';
 
 const SECTION_LINKS = [
   { id: 'home', label: 'HOME', icon: '⌂' },
@@ -23,10 +24,49 @@ const SECTION_LINKS = [
 ];
 
 function App() {
+  const [invitationState, setInvitationState] = useState({ status: 'loading' });
+  const [invitation, setInvitation] = useState(null);
   const [hasEntered, setHasEntered] = useState(false);
   const [isEntering, setIsEntering] = useState(false);
   const [showInvitation, setShowInvitation] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const segments = window.location.pathname.split('/').filter(Boolean);
+    if (segments.length !== 1) {
+      setInvitationState({ status: 'not-found' });
+      return undefined;
+    }
+
+    let slug;
+    try {
+      slug = decodeURIComponent(segments[0]);
+    } catch {
+      setInvitationState({ status: 'not-found' });
+      return undefined;
+    }
+
+    let isCurrent = true;
+    getInvitation(slug)
+      .then((result) => {
+        if (!isCurrent) return;
+        if (!result) {
+          setInvitationState({ status: 'not-found' });
+          return;
+        }
+
+        setInvitation(result);
+        setInvitationState({ status: 'ready' });
+      })
+      .catch((error) => {
+        if (!isCurrent) return;
+        setInvitationState({ status: 'error', message: error.message });
+      });
+
+    return () => {
+      isCurrent = false;
+    };
+  }, []);
 
   useEffect(() => {
     if (!isEntering) return undefined;
@@ -73,16 +113,44 @@ function App() {
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = hasEntered ? previousOverflow : 'hidden';
+    document.body.style.overflow =
+      invitationState.status === 'ready' && !hasEntered ? 'hidden' : previousOverflow;
     return () => {
       document.body.style.overflow = previousOverflow;
     };
-  }, [hasEntered]);
+  }, [hasEntered, invitationState.status]);
+
+  if (invitationState.status === 'loading') {
+    return <main className="route-message" aria-live="polite">Memuat undangan...</main>;
+  }
+
+  if (invitationState.status === 'not-found') {
+    return (
+      <main className="route-message" role="status">
+        <p className="route-message-code">404</p>
+        <h1>Undangan tidak ditemukan</h1>
+        <p>Periksa kembali tautan undangan yang kamu terima.</p>
+      </main>
+    );
+  }
+
+  if (invitationState.status === 'error') {
+    return (
+      <main className="route-message" role="alert">
+        <h1>Undangan tidak dapat dimuat</h1>
+        <p>{invitationState.message}</p>
+      </main>
+    );
+  }
 
   return (
     <>
       {!hasEntered && (
-        <GameEntrance isEntering={isEntering} onEnter={() => setIsEntering(true)} />
+        <GameEntrance
+          recipientName={invitation.name}
+          isEntering={isEntering}
+          onEnter={() => setIsEntering(true)}
+        />
       )}
       {showInvitation && (
         <div className="invitation-reveal">
