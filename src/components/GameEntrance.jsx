@@ -33,7 +33,6 @@ export default function GameEntrance({ recipientName, isEntering, onEnter }) {
         <p className="entrance-recipient">UNTUK {recipientName}</p>
         <p className="entrance-overline">NOVI <span>+</span> RIO</p>
         <h1 id="entrance-title" className="entrance-title">The next level<br /><em>starts here.</em></h1>
-        <p className="entrance-description">Sebuah kisah baru menanti untuk dimulai.<br />Kami senang jika kamu menjadi bagian di dalamnya.</p>
         <button className="entrance-button" type="button" disabled={isEntering} onClick={onEnter}>
           <span aria-hidden="true">▶</span> {isEntering ? 'MEMASUKI PERMAINAN...' : 'MASUK KE PERMAINAN'} <span aria-hidden="true">↗</span>
         </button>
